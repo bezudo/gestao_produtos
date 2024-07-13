@@ -1,0 +1,55 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "A Laravel application.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "require": {
+        "php": "^8.0",
+        "fideloper/proxy": "^4.4",
+        "fruitcake/laravel-cors": "^2.1",
+        "laravel/framework": "^11.0",
+        "laravel/tinker": "^2.8"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.14",
+        "facade/ignition": "^2.21",
+        "fakerphp/faker": "^1.21",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^6.2",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:models",
+            "@php artisan ide-helper:meta"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "prefer-stable": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    }
+}
